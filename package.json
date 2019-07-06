@@ -1,8 +1,8 @@
 {
-    "name": "object_wrap",
-    "version": "0.0.0",
-    "description": "Node.js Addons Example #6",
-    "main": "addon.js",
+    "name": "audio",
+    "version": "0.0.1",
+    "description": "Simple bindings to list and mute window capture devices.",
+    "main": "index.js",
     "private": true,
     "gypfile": true,
     "dependencies": {
@@ -10,6 +10,11 @@
         "node-addon-api": "^1.0.0"
     },
     "scripts": {
-        "test": "node-gyp rebuild && node ./addon.js"
+        "build": "node-gyp rebuild",
+        "test": "jest"
+    },
+    "devDependencies": {
+        "jest": "^24.8.0",
+        "mocha": "^6.1.4"
     }
 }

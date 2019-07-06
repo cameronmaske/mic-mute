@@ -7,16 +7,15 @@
 class Device : public Napi::ObjectWrap<Device>
 {
 public:
+    Device(const Napi::CallbackInfo &info); // constructor
     static void Init(Napi::Env env, Napi::Object exports);
-    static Napi::Object NewInstance(Napi::Value arg);
-    // Napi::String name() const { return "Yeti"; }
-    // double Val() const { return val_; }
-
-    Device(const Napi::CallbackInfo &info);
+    static Napi::Object NewInstance(Napi::Value arg, IMMDevice *device);
 
 private:
     static Napi::FunctionReference constructor;
-    // double val_;
+    Napi::Value GetName(const Napi::CallbackInfo &info);
+    Napi::Value Mute(const Napi::CallbackInfo &info);
+    Napi::Value Unmute(const Napi::CallbackInfo &info);
 
     IMMDevice *_device;
 };

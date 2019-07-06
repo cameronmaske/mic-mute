@@ -1,4 +1,6 @@
 build/
+node_modules/
+NOTES.md
 
 # Logs
 logs

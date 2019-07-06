@@ -1,12 +1,12 @@
 {
   "targets": [
     {
-      "target_name": "addon",
+      "target_name": "audio",
       "cflags!": [ "-fno-exceptions" ],
       "cflags_cc!": [ "-fno-exceptions" ],
       "cflags!": [ "-fno-exceptions" ],
       "cflags_cc!": [ "-fno-exceptions" ],
-      "sources": [ "addon.cc", "myobject.cc", "device.cc" ],
+      "sources": [ "audio.cc", "device.cc", "utils.cc" ],
       "include_dirs": [
         "<!@(node -p \"require('node-addon-api').include\")"
       ],
