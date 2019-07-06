@@ -36,6 +36,10 @@ void Device::Init(Napi::Env env, Napi::Object exports)
 
 Napi::Value Device::GetName(const Napi::CallbackInfo &info)
 {
+    if (this->_name)
+    {
+        return this->_name;
+    }
     Napi::Env env = info.Env();
     Napi::HandleScope scope(env);
     IPropertyStore *props;
@@ -52,6 +56,7 @@ Napi::Value Device::GetName(const Napi::CallbackInfo &info)
         props->GetValue(PKEY_Device_FriendlyName, &variant));
 
     Napi::String name = Napi::String::New(env, WidestringToString(variant.pwszVal));
+    this->_name = name;
     PropVariantClear(&variant);
     return name;
 }

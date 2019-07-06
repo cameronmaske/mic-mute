@@ -18,6 +18,7 @@ private:
     Napi::Value Unmute(const Napi::CallbackInfo &info);
 
     IMMDevice *_device;
+    Napi::String _name;
 };
 
 #endif

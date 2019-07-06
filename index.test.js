@@ -16,3 +16,10 @@ test('default device', () => {
     expect(device.mute()).toBeTruthy()
     expect(device.unmute()).toBeTruthy()
 });
+
+
+test('get name', () => {
+    const device = audio.defaultDevice()
+    const name = device.getName()
+    expect(device.getName()).toBe(name)
+});
